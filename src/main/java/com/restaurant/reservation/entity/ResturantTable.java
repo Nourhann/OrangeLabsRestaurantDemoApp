@@ -26,6 +26,16 @@ public class ResturantTable implements Serializable{
 	@Column(name="TABLE_CAPACITY")
 	private int capacity;
 
+	public ResturantTable() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public ResturantTable(int capacity) {
+		super();
+		this.capacity = capacity;
+	}
+
 	public int getId() {
 		return id;
 	}

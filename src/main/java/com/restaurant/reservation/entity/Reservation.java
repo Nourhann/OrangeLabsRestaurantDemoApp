@@ -48,6 +48,21 @@ public class Reservation implements Serializable{
 	private ResturantTable table;
 
 	
+	public Reservation() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Reservation(String customerName, double paymentAmount, Date reservationDate, int numOfPersons,
+			ResturantTable table) {
+		super();
+		this.customerName = customerName;
+		this.paymentAmount = paymentAmount;
+		this.reservationDate = reservationDate;
+		this.numOfPersons = numOfPersons;
+		this.table = table;
+	}
+
 	public int getId() {
 		return id;
 	}
