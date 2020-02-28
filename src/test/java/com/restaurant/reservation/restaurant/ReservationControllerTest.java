@@ -38,7 +38,7 @@ public class ReservationControllerTest {
 	    private TableService tableService;
 	    
 	    @Test
-	    public void givenEmployees_whenGetEmployees_thenReturnJsonArray()
+	    public void getAllReservationsTest()
 	      throws Exception {
 	         
 	    	ResturantTable table = new ResturantTable(5);
@@ -47,9 +47,7 @@ public class ReservationControllerTest {
 	    	double paymentAmount = 1200.0;
 	    	int numOfPersons = 4;
 	    	
-         	reservationService.reserveTable(table, customerName, paymentAmount, date, numOfPersons);
-	        //given(reservationService.getAllReservations()).willReturn(allReservations);
-	     
+         	reservationService.reserveTable(table, customerName, paymentAmount, date, numOfPersons); 
 	        mvc.perform(get("/reservations/")
 	          .contentType(MediaType.APPLICATION_JSON))
 	          .andExpect(status().isOk())
@@ -58,5 +56,16 @@ public class ReservationControllerTest {
 	          .andExpect(jsonPath("$[0].numOfPersons", is(numOfPersons)))
 	          .andExpect(jsonPath("$[0].reservationDate", is(date)))
 	          .andExpect(jsonPath("$[0].table.capacity", is(table.getCapacity())));
+	    }
+	    
+	    @Test
+	    public void getAllTablesTest()
+	      throws Exception {
+	        int capacity = 5;
+	    	tableService.add(capacity);
+	        mvc.perform(get("/tables/")
+	          .contentType(MediaType.APPLICATION_JSON))
+	          .andExpect(status().isOk())
+	          .andExpect(jsonPath("$[0].capacity", is(capacity)));
 	    }
 }

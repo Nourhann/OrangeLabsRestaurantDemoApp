@@ -36,6 +36,12 @@ public class ResturantTable implements Serializable{
 		this.capacity = capacity;
 	}
 
+	public ResturantTable(int id, int capacity) {
+		super();
+		this.id = id;
+		this.capacity = capacity;
+	}
+
 	public int getId() {
 		return id;
 	}
