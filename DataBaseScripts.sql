@@ -1,0 +1,178 @@
+CREATE SCHEMA `restaurant_db` ;
+
+
+
+CREATE TABLE IF NOT EXISTS TABLES (
+   
+
+TABLE_ID INT AUTO_INCREMENT PRIMARY KEY,
+   
+
+TABLE_CAPACITY INT NOT NULL
+
+);
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS RESRVATIONS (
+   
+
+RESERVATION_ID INT AUTO_INCREMENT PRIMARY KEY,
+   
+
+CUSTOMER_NAME VARCHAR(100) NOT NULL,
+   
+
+PAYMENT DOUBLE,
+   
+
+RESERVATION_DATE DATE ,
+   
+
+TABLE_ID INT NOT NULL,
+   
+NUM_OF_PERSONS INT,
+
+FOREIGN KEY (TABLE_ID)
+   
+
+REFERENCES TABLES (TABLE_ID)
+   
+
+ON UPDATE RESTRICT ON DELETE CASCADE
+
+);
+
+
+INSERT INTO `restaurant_db`.`tables`
+
+(`TABLE_ID`,
+`TABLE_CAPACITY`)
+
+VALUES
+(1,
+2);
+
+
+
+INSERT INTO `restaurant_db`.`tables`
+
+(`TABLE_ID`,
+`TABLE_CAPACITY`)
+
+VALUES
+(2,
+2);
+
+
+
+
+INSERT INTO `restaurant_db`.`tables`
+
+(`TABLE_ID`,
+`TABLE_CAPACITY`)
+VALUES
+(3,
+2);
+
+
+
+
+INSERT INTO `restaurant_db`.`tables`
+
+(`TABLE_ID`,
+`TABLE_CAPACITY`)
+
+VALUES
+(4,
+2);
+
+INSERT INTO `restaurant_db`.`tables`
+
+(`TABLE_ID`,
+`TABLE_CAPACITY`)
+VALUES
+(5,
+5);
+
+
+
+INSERT INTO `restaurant_db`.`tables`
+
+(`TABLE_ID`,
+`TABLE_CAPACITY`)
+VALUES
+(6,
+5);
+
+
+
+INSERT INTO `restaurant_db`.`tables`
+
+(`TABLE_ID`,
+`TABLE_CAPACITY`)
+VALUES
+(7,
+5);
+
+
+
+INSERT INTO `restaurant_db`.`tables`
+
+(`TABLE_ID`,
+`TABLE_CAPACITY`)
+VALUES
+(8,
+5);
+
+
+
+INSERT INTO `restaurant_db`.`tables`
+
+(`TABLE_ID`,
+`TABLE_CAPACITY`)
+VALUES
+(9,
+5);
+
+
+
+INSERT INTO `restaurant_db`.`tables`
+
+(`TABLE_ID`,
+`TABLE_CAPACITY`)
+VALUES
+(10,
+5);
+
+
+
+INSERT INTO `restaurant_db`.`tables`
+
+(`TABLE_ID`,
+`TABLE_CAPACITY`)
+VALUES
+(11,
+5);
+
+
+INSERT INTO `restaurant_db`.`tables`
+
+(`TABLE_ID`,
+`TABLE_CAPACITY`)
+VALUES
+(12,
+10);
+
+
+
+INSERT INTO `restaurant_db`.`tables`
+
+(`TABLE_ID`,
+`TABLE_CAPACITY`)
+VALUES
+(13,
+10);

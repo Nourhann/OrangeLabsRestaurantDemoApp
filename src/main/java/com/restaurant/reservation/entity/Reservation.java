@@ -26,7 +26,6 @@ public class Reservation implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="RESERVATION_ID")
 	private int id;
 	
@@ -56,6 +55,17 @@ public class Reservation implements Serializable{
 	public Reservation(String customerName, double paymentAmount, Date reservationDate, int numOfPersons,
 			ResturantTable table) {
 		super();
+		this.customerName = customerName;
+		this.paymentAmount = paymentAmount;
+		this.reservationDate = reservationDate;
+		this.numOfPersons = numOfPersons;
+		this.table = table;
+	}
+
+	public Reservation(int id, String customerName, double paymentAmount, Date reservationDate, int numOfPersons,
+			ResturantTable table) {
+		super();
+		this.id = id;
 		this.customerName = customerName;
 		this.paymentAmount = paymentAmount;
 		this.reservationDate = reservationDate;
