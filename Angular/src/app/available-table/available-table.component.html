@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+  <h3>Available Tables For Today</h3>
+  <table class="ui celled padded table">
+  <tr>
+    <th>Table Number</th>
+    <th>MAx Num Of Persons</th>
+  </tr>
+  <tr *ngFor="let table of tables">
+    <td>
+       {{table.id}}
+    </td>
+    <td>
+      {{table.capacity}}
+    </td>
+    <td>
+      <button class="ui primary button">
+        Reserve
+      </button>
+    </td>    
+  </tr>
+</table>
+

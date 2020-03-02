@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+<form class="ui form">
+  <h4 class="ui dividing header">Add Table</h4>
+  <div class="field">
+    <label>Table Capacity</label>
+      <div class="field">
+        <input #capacity type="number" placeholder="Max Number Of Persons">
+      </div>
+      <button class="ui primary button" (click)="addTable(capacity)">
+        Save
+      </button>
+  </div>
+</form>
+   
