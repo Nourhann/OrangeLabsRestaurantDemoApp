@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+  
+  <form id="filter">
+    <label>Filter Reservations by Date:</label>
+    <input type="text" name="searchText" [(ngModel)]="searchText" placeholder="search text goes here"/>
+</form>
+  <table class="ui celled padded table">
+  <tr>
+    <th>Reservation Number</th>
+    <th>Customer Number</th>
+    <th>Payment Amount</th>
+    <th>Reservation Date</th>
+    <th>Num Of Persons</th>
+    <th>Table Number</th>
+  </tr>
+  <tr *ngFor="let reservation of reservations  | filterPipe : searchText">
+    <td>
+       {{reservation.id}}
+    </td>
+    <td>
+      {{reservation.customerName}}
+    </td>
+    <td>
+      {{reservation.paymentAmount}}
+    </td>
+    <td>
+      {{reservation.reservationDate}}
+    </td>
+    <td>
+      {{reservation.numOfPersons}}
+    </td>
+    <td>
+      {{reservation.table.id}}
+    </td>
+    
+      
+  </tr>
+</table>
